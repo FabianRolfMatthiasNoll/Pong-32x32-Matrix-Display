@@ -13,8 +13,17 @@ void winning_conditions(){
       //Player 2 bekommt Punkt und Programm pausiert solange
       
       if(playertwo_won == true){
-        pointone++;
+
+        //Spieler 1 bekommt einen Punkt
+        
+        pointone++; 
+
+        //Siegesbedingung wird zurückgesetzt
+        
         playertwo_won = false;
+
+        //Hier wird abgespeichert das Spieler 1 den Ball bekommt
+        
         ballp1 = true;
         ballp2 = false;
         playerone(pointone);
@@ -32,8 +41,17 @@ void winning_conditions(){
       //Player 1 bekommt Punkt und Programm pausiert solange
       
       if(playerone_won == true){
+
+        //Spieler 2 bekommt einen Punkt
+        
         pointtwo++;
+
+        //Siegesbedingung wird zurückgesetzt
+        
         playerone_won = false;
+
+        //Hier wird abgespeichert das Spieler 2 den Ball bekommt
+        
         ballp1 = false;
         ballp2 = true;
         playertwo(pointtwo);
@@ -49,10 +67,14 @@ void winning_conditions(){
       }
 
       if(pointone == 3 || pointtwo == 3){
+
+        //Bildschirm wird kurz komplett Schwarz gemacht um alles zu löschen
         
-        matrix.fillRect(0,0,32,32,BLACK);
+        matrix.fillRect(0,0,32,32,BLACK); 
+
+        //Gewinner Bildschirm wenn Spieler 1 3 Punkte hat
         
-        while(pointone == 3){
+        while(pointone == 3){ 
 
           //Zeichnet ein P
 
@@ -100,6 +122,9 @@ void winning_conditions(){
           delay(random(0,60));
           digitalWrite(Lautsprecher, LOW);
         }
+
+        //Gewinner Bildschirm wenn Spieler 2 3 Punkte hat
+        
         while(pointtwo == 3){
 
           matrix.fillRect(5,6,21,14,BLACK);
@@ -157,14 +182,26 @@ void winning_conditions(){
       //Wenn beide Spieler bereit sind und jeweils beide Knöpfe drücken wird die neue Ballrichtung bestimmt und alles auf Anfang gesetzt
       
       if(s_upone == LOW && s_uptwo == LOW && s_downone == LOW && s_downtwo == LOW){
+        
+        //Bildschirm wird geleert
+        
         matrix.fillRect(0,0,32,32,BLACK);
+       
+        //Siegesbedingung wird zurückgesetzt
+        
         point_won = false;
+
+        //Ball wird Spieler 1 an einer zufälligen Position zugespielt 
+        
         if(ballp1 == true){
           ballx = random(14,17);
           bally = random(12,18);
           balldirectionx = -1;
           balldirectiony = -1;
         }
+
+        //Ball wird Spieler 2 an einer zufälligen Position zugespielt
+        
         if(ballp2 == true){
           ballx = random(16,19);
           bally = random(12,18);

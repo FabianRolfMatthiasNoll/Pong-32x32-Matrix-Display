@@ -1,11 +1,13 @@
 void loop(){
 
-  
+  //Taster werden abgefragt für die Steuerung und in die Zustandsvariablen gespeichert
   
   s_upone = digitalRead(upone);
   s_uptwo = digitalRead(uptwo);
   s_downone = digitalRead(downone);
   s_downtwo = digitalRead(downtwo);
+
+//Programm wird nur ausgeführt wenn kein Punkt gewonnen wurde und das Spiel nicht gewonnen wurde
 
 if(game_won == false && point_won == false){
   matrix.drawLine(0, 24, 31, 24, GRAY);
@@ -63,8 +65,14 @@ if(game_won == false && point_won == false){
   //Lässt Ball anhand von Ballgeschwindigkeit bewegen
   
   ball_movement();
+  
   delay(ballspeed);  
+  
 } else {
+
+  //sollte das Spiel oder ein Punkt gewonnen worden sein soll die Funktion
+  // winning_conditions aufgerufen werden um Siegesanimationen etc. auszuführen
+  
   winning_conditions();
-}
+  }
 }
