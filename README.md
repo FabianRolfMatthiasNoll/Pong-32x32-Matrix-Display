@@ -11,4 +11,4 @@ both buttons on their controller
 # Controller schematic
 
 # Arduino Shield schematic
-![Screenshot](schematic.png)
+
