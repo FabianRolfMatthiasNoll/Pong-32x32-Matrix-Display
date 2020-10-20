@@ -79,13 +79,13 @@ int oldpaddletwoy; //alte xy Koordinate von Paddel 2
 
 //Variablen für Spielregeln
 
-int point_won = false; //Ein Punkt wurde erspielt
+int point_won = true; //Ein Punkt wurde erspielt
 int game_won = false; //Das Spiel wurde gewonnen
 int playerone_won = false; //Spieler 1 hat gewonnen
 int playertwo_won = false; //Spieler 2 hat gewonnen
 int pointone = 0; //Punktestand Spieler 1
 int pointtwo = 0; //Punktestand Spieler 2
-int ballp1 = false; //Abspeicherung ob Spieler 1 den Ball bekommt
+int ballp1 = true; //Abspeicherung ob Spieler 1 den Ball bekommt
 int ballp2 = false; //Abspeicherung ob Spieler 2 den Ball bekommt
 
 //Funktionen müssen Deklariert werden da Arduino sonst manchmal Fehler macht

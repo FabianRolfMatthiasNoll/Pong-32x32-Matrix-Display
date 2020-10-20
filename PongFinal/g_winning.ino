@@ -1,6 +1,11 @@
 void winning_conditions(){
 
+  //Abfrage ob noch niemand 3 Punkte hat
+
   while(pointone < 3 || pointtwo < 3){
+
+    //Abfrage ob jemand einen Punkt gewonnen hat
+    
     if(point_won == true){
       
       //Taster auslesen da wir nicht mehr in der void loop sind
@@ -73,7 +78,7 @@ void winning_conditions(){
         matrix.fillRect(0,0,32,32,BLACK); 
 
         //Gewinner Bildschirm wenn Spieler 1 3 Punkte hat
-        
+
         while(pointone == 3){ 
 
           //Zeichnet ein P
